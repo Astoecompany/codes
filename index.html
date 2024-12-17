@@ -190,8 +190,6 @@
             line-height: 1.2;
         }
 
-     
-
         .join-left-section p {
             font-size: 1.2rem;
             margin-top: 10px;
@@ -210,7 +208,17 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.2);
         }
 
-   
+        .join-sale-badge {
+            background-color: #ef4444;
+            color: #ffffff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease;
+            cursor: default;
+        }
 
         .join-sale-badge:hover {
             background-color: #dc2626;
@@ -229,8 +237,8 @@
 
         .join-features {
             list-style: none;
-            margin: 20px 0;
-            padding-left: 0;
+                margin: 20px 0;
+                padding-left: 0;
         }
 
         .join-features li {
@@ -449,9 +457,9 @@
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
 
-        .showcase-card img {
+        .showcase-card iframe {
             width: 100%;
-            height: auto;
+            height: 170px;
             border-radius: 10px;
             margin-bottom: 15px;
         }
@@ -466,6 +474,7 @@
             font-size: 1rem;
             color: #4b5563;
             margin-bottom: 15px;
+            flex-grow: 1;
         }
 
         .showcase-card .view-btn {
@@ -653,6 +662,90 @@
                 font-size: 2rem;
             }
         }
+
+        /* Side Chat Box Styles */
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 1001;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .chat-button:hover {
+            background-color: #1d4ed8;
+            transform: scale(1.1);
+        }
+
+        .chat-box {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 300px;
+            max-width: 90%;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+            z-index: 1001;
+        }
+
+        .chat-header {
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 10px 15px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-body {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-body textarea {
+            resize: none;
+            height: 80px;
+            padding: 8px;
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .chat-body button {
+            background-color: #10b981;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .chat-body button:hover {
+            background-color: #059669;
+            transform: scale(1.05);
+        }
+
     </style>
 </head>
 <body>
@@ -711,10 +804,9 @@
                 <div class="join-pricing-container">
                     <!-- Pricing Card 1 -->
                     <div class="join-pricing-card">
-                        <div>6 MONTHS</div>
-                        <div class="price"><br> USD 99 <span></span></div>
+                        <div class="header">6 MONTHS</div>
+                        <div class="price">USD <strong>99</strong></div>
                         <div class="details">
-                         <br>    
                             <span>1 Time pay for 6 Months USD 99</span>
                         </div>
                         <hr>
@@ -729,11 +821,10 @@
                     </div>
                     <!-- Pricing Card 2 -->
                     <div class="join-pricing-card">
-                        <div>3 MONTHS</div>
-                        <div class="price"><br> USD 30 <span></span></div>
+                        <div class="header">3 MONTHS</div>
+                        <div class="price">USD <strong>30</strong></div>
                         <div class="details">
-                            <br>
-                             <span>1 Time pay for 3 Months USD 30</span>
+                            <span>1 Time pay for 3 Months USD 30</span>
                         </div>
                         <hr>
                         <ul class="features">
@@ -747,11 +838,10 @@
                     </div>
                     <!-- Pricing Card 3 -->
                     <div class="join-pricing-card">
-                        <div>1 MONTH</div>
-                        <div class="price"><br> USD 10 <span></span></div>
+                        <div class="header">1 MONTH</div>
+                        <div class="price">USD <strong>10</strong></div>
                         <div class="details">
-                        <br>
-                              <span>1 Time pay for 1 Months USD 10</span>
+                            <span>1 Time pay for 1 Month USD 10</span>
                         </div>
                         <hr>
                         <ul class="features">
@@ -788,7 +878,7 @@
                         <div class="col-md-6 mb-3">
                             <label for="formPlan" class="form-label">Plan:</label>
                             <select id="formPlan" class="form-select" required>
-                                <option value="" disabled>Select a plan</option>
+                                <option value="" disabled selected>Select a plan</option>
                                 <option value="6 MONTHS">6 MONTHS</option>
                                 <option value="3 MONTHS">3 MONTHS</option>
                                 <option value="1 MONTH">1 MONTH</option>
@@ -808,53 +898,68 @@
                 <div class="showcase-container">
                     <!-- Showcase Card 1 -->
                     <div class="showcase-card">
-                        <img src="https://elements-resized.envatousercontent.com/elements-cover-images/52c92f40-06fe-4b6c-884a-48f06a00ec53?w=710&cf_fit=scale-down&q=85&format=auto&s=3815c0fe286f2a5ad6fca266d5fd2528ee329d7adfb9e747d24730249316e312" alt="WordPress Theme 1">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" allowfullscreen></iframe>
                         <strong>Electro Electronics Store WooCommerce Theme</strong>
                         <p>Electro Electronics Store WooCommerce Theme</p>
-                        <button class="view-btn" id="subscriptionFormSection">Join to Unlock</button>
+                        <button class="view-btn">Join to Unlock</button>
                     </div>
                     <!-- Showcase Card 2 -->
                     <div class="showcase-card">
-                        <img src="https://elements-resized.envatousercontent.com/elements-cover-images/0f4e235d-4870-4806-b5fe-0454cbedaca1?w=710&cf_fit=scale-down&q=85&format=auto&s=1934049c8eefad2094f7aaa2cceb19b494483772a8f501a2cc42ba9e0bfbf17e" alt="HTML Template 1">
-                       <strong>Food & Restaurant HTML Template</strong>
+                        <iframe src="https://www.youtube.com/embed/3GwjfUFyY6M" title="YouTube video player" allowfullscreen></iframe>
+                        <strong>Food & Restaurant HTML Template</strong>
                         <p>Fully responsive and customizable HTML templates for any project.</p>
-                        <button class="view-btn" id="subscriptionFormSection">Join to Unlock</button>
+                        <button class="view-btn">Join to Unlock</button>
                     </div>
                     <!-- Showcase Card 3 -->
                     <div class="showcase-card">
-                        <img src="https://elements-resized.envatousercontent.com/elements-cover-images/4e277558-668d-449b-a65f-e565a8aa14cc?w=710&cf_fit=scale-down&q=85&format=auto&s=b7fa388ad40365069e0dd632034822ccb905173361622d08a0901f8713052099" alt="WordPress Theme 2">
-                       <strong>Botanical - HTML5 Ecommerce Template</strong>
+                        <iframe src="https://www.youtube.com/embed/tVj0ZTS4WF4" title="YouTube video player" allowfullscreen></iframe>
+                        <strong>Botanical - HTML5 Ecommerce Template</strong>
                         <p>Designed for creative professionals, featuring unique layouts and animations.</p>
-                        <button class="view-btn" id="subscriptionFormSection">Join to Unlock</button>
+                        <button class="view-btn">Join to Unlock</button>
                     </div>
                 </div>
-<br>
+                <br>
                 <div class="showcase-container">
-                    <!-- Showcase Card 1 -->
+                    <!-- Showcase Card 4 -->
                     <div class="showcase-card">
-                        <img src="https://elements-resized.envatousercontent.com/elements-cover-images/b89943f2-e78b-40b5-8082-2ee86bfc9c98?w=710&cf_fit=scale-down&q=85&format=auto&s=e8e5590267acf760f0b407423e1f8fb86c0bf9fbb744454de1a8b7535f1653b2" alt="WordPress Theme 1">
+                        <iframe src="https://www.youtube.com/embed/V-_O7nl0Ii0" title="YouTube video player" allowfullscreen></iframe>
                         <strong>Bentofolio – Personal Portfolio WordPress Theme</strong>
                         <p>Bentofolio – Personal Portfolio WordPress Theme</p>
-                        <button class="view-btn" id="subscriptionFormSection">Join to Unlock</button>
+                        <button class="view-btn">Join to Unlock</button>
                     </div>
-                    <!-- Showcase Card 2 -->
+                    <!-- Showcase Card 5 -->
                     <div class="showcase-card">
-                        <img src="https://elements-resized.envatousercontent.com/elements-cover-images/ce8073a7-9b4e-4a98-bbb0-dc7054014d26?w=2038&cf_fit=scale-down&q=85&format=auto&s=28517851965cfb0d4f846c7ec9d9866c2530a8e330fa7fbdb3d1bb862c33fd49" alt="HTML Template 1">
-                       <strong>Blazin Agency | Creative WordPress Theme</strong>
+                        <iframe src="https://www.youtube.com/embed/ZZ5LpwO-An4" title="YouTube video player" allowfullscreen></iframe>
+                        <strong>Blazin Agency | Creative WordPress Theme</strong>
                         <p>Fully responsive and customizable HTML templates for any project.</p>
-                        <button class="view-btn" id="subscriptionFormSection">Join to Unlock</button>
+                        <button class="view-btn">Join to Unlock</button>
                     </div>
-                    <!-- Showcase Card 3 -->
+                    <!-- Showcase Card 6 -->
                     <div class="showcase-card">
-                        <img src="https://elements-resized.envatousercontent.com/elements-template-kits-cover-images/files/506703619/Cover%20Template%20Kit.jpg?w=710&cf_fit=scale-down&q=85&format=auto&s=f87517b183322d0384fa72edfdb12971b56f4beca002ea900543272b6c0c5878" alt="WordPress Theme 2">
-                       <strong>PageBuzz - Digital Agency Elementor Template Kit</strong>
+                        <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" title="YouTube video player" allowfullscreen></iframe>
+                        <strong>PageBuzz - Digital Agency Elementor Template Kit</strong>
                         <p>Designed for creative professionals, featuring unique layouts and animations.</p>
-                        <button class="view-btn" id="subscriptionFormSection">Join to Unlock</button>
+                        <button class="view-btn">Join to Unlock</button>
                     </div>
                 </div>
 
                 <button class="action-btn" id="showcaseActionBtn">Get Started</button>
             </section>
+        </div>
+
+        <!-- Side Chat Box -->
+        <div class="chat-box" id="chatBox">
+            <div class="chat-header" id="chatHeader">
+                <span>Chat with us</span>
+                <i class="fas fa-times" id="closeChat"></i>
+            </div>
+            <div class="chat-body">
+                <textarea id="chatMessage" placeholder="Type your message here..."></textarea>
+                <button id="sendChat">Send</button>
+            </div>
+        </div>
+        <div class="chat-button" id="chatButton">
+            <i class="fas fa-comments"></i>
         </div>
 
         <script>
@@ -874,6 +979,13 @@
             const subscriptionForm = document.getElementById('subscriptionForm');
             const formPlan = document.getElementById('formPlan');
             const formPriceDisplay = document.getElementById('formPriceDisplay');
+
+            // Side Chat Elements
+            const chatButton = document.getElementById('chatButton');
+            const chatBox = document.getElementById('chatBox');
+            const closeChat = document.getElementById('closeChat');
+            const sendChat = document.getElementById('sendChat');
+            const chatMessage = document.getElementById('chatMessage');
 
             // Function to show Join content and hide iframe
             function showJoinContent() {
@@ -931,29 +1043,31 @@
             // Add event listener to "Get Started" button in Showcase Section
             showcaseActionBtn.addEventListener('click', () => {
                 // Scroll to the subscription form with default plan
-                showSubscriptionForm('6 MONTHS', 'Rs 474');
+                showSubscriptionForm('6 MONTHS', 'USD 99');
             });
 
-            // Add event listeners to "View Details" buttons in Showcase Cards
+            // Add event listeners to "Join to Unlock" buttons in Showcase Cards
             viewButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // Scroll to the respective showcase card or open a modal with more details
-                    // For simplicity, we'll scroll to the top of the showcase section
-                    document.getElementById('showcase').scrollIntoView({ behavior: 'smooth' });
+                    // Show the subscription form without pre-selecting a plan
+                    showSubscriptionForm();
                 });
             });
 
             // Function to show the embedded Subscription Form
-            function showSubscriptionForm(planName, planPrice) {
+            function showSubscriptionForm(planName = '', planPrice = '') {
                 // Display the subscription form section
                 subscriptionFormSection.style.display = 'block';
                 subscriptionFormSection.scrollIntoView({ behavior: 'smooth' });
 
-                // Set the selected plan in the form
-                formPlan.value = planName;
-
-                // Update the price display based on the plan
-                updatePriceDisplay(planName);
+                // Set the selected plan in the form if provided
+                if (planName && planPrice) {
+                    formPlan.value = planName;
+                    updatePriceDisplay(planName);
+                } else {
+                    formPlan.value = '';
+                    formPriceDisplay.innerText = '';
+                }
             }
 
             // Function to update the price display based on selected plan
@@ -970,7 +1084,7 @@
                         price = 'USD 10';
                         break;
                     default:
-                        price = 'Rs 0';
+                        price = 'USD 0';
                 }
                 formPriceDisplay.innerText = `Price: ${price}`;
             }
@@ -1006,6 +1120,28 @@
                 subscriptionForm.reset();
                 subscriptionFormSection.style.display = 'none';
             });
+
+            // Side Chat Box Functionality
+            chatButton.addEventListener('click', () => {
+                chatBox.style.display = 'flex';
+            });
+
+            closeChat.addEventListener('click', () => {
+                chatBox.style.display = 'none';
+            });
+
+            sendChat.addEventListener('click', () => {
+                const message = chatMessage.value.trim();
+                if (message === '') {
+                    alert('Please enter a message.');
+                    return;
+                }
+                const whatsappURL = `https://wa.me/923224083545?text=${encodeURIComponent(message)}`;
+                window.open(whatsappURL, '_blank');
+                chatMessage.value = '';
+                chatBox.style.display = 'none';
+            });
+
         </script>
     </div>
 </body>
