@@ -5,22 +5,14 @@
   <!-- Ensures the page is mobile-responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VIP MEMBERSHIP</title>
-  
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap CSS & JS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Confetti Library -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  
-  <!-- Bootstrap JS Bundle (includes Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
   <style>
-    /* Reset & Base Styles */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -31,7 +23,7 @@
       height: 100%;
       overflow: hidden;
       font-family: 'Roboto', sans-serif;
-      background-color: #f0f4f8;
+      background-color: #f5f7fa;
       color: #333;
     }
 
@@ -42,8 +34,8 @@
 
     /* Header */
     .header {
-      background: linear-gradient(90deg, #1e3c72, #2a5298);
-      color: #ffffff;
+      background-color: #1e293b;
+      color: #f1f5f9;
       padding: 15px 30px;
       position: fixed;
       top: 0;
@@ -65,19 +57,18 @@
 
     .header .nav-buttons button {
       margin-left: 10px;
-      padding: 10px 25px;
+      padding: 10px 20px;
       border: none;
-      background-color: #ff7f50;
+      background-color: #2563eb;
       color: #f1f5f9;
       cursor: pointer;
-      border-radius: 30px;
+      border-radius: 25px;
       transition: background-color 0.3s, transform 0.3s;
       font-size: 16px;
-      font-weight: 600;
     }
 
     .header .nav-buttons button:hover {
-      background-color: #ff6347;
+      background-color: #1d4ed8;
       transform: translateY(-2px);
     }
 
@@ -92,10 +83,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #f0f4f8;
+      background-color: #f5f7fa;
       transition: background-color 0.3s ease;
       flex-direction: column;
-      padding: 20px;
     }
 
     /* Iframe Styling */
@@ -114,13 +104,13 @@
       height: 100%;
       overflow: auto;
       padding: 20px;
-      background-color: #f0f4f8;
+      background-color: #f5f7fa;
       animation: fadeIn 0.5s ease;
     }
 
     /* Header within Join Content */
     .join-header {
-      background: linear-gradient(90deg, #ff7f50, #ff6347);
+      background-color: #1e293b;
       color: #f1f5f9;
       padding: 20px 30px;
       position: relative;
@@ -144,7 +134,7 @@
       right: 30px;
       top: 50%;
       transform: translateY(-50%);
-      background-color: #28a745;
+      background-color: #ef4444;
       color: #f1f5f9;
       padding: 10px 30px;
       border: none;
@@ -157,7 +147,7 @@
     }
 
     .join-header .save-now:hover {
-      background-color: #218838;
+      background-color: #dc2626;
       transform: translateY(-50%) scale(1.05);
     }
 
@@ -222,7 +212,7 @@
     }
 
     .join-sale-badge {
-      background-color: #ff7f50;
+      background-color: #ef4444;
       color: #ffffff;
       padding: 5px 15px;
       border-radius: 20px;
@@ -234,7 +224,7 @@
     }
 
     .join-sale-badge:hover {
-      background-color: #ff6347;
+      background-color: #dc2626;
     }
 
     .join-price {
@@ -245,7 +235,7 @@
     }
 
     .join-price strong {
-      color: #ff7f50;
+      color: #ef4444;
     }
 
     .join-features {
@@ -267,7 +257,7 @@
     }
 
     .join-features li i {
-      color: #ff7f50;
+      color: #ef4444;
       margin-right: 10px;
       min-width: 25px;
       text-align: center;
@@ -275,7 +265,7 @@
     }
 
     .join-right-section .save-now {
-      background-color: #007bff;
+      background-color: #10b981;
       color: #ffffff;
       padding: 15px 30px;
       border: none;
@@ -290,13 +280,13 @@
     }
 
     .join-right-section .save-now:hover {
-      background-color: #0056b3;
+      background-color: #059669;
       transform: scale(1.05);
     }
 
     /* Pricing Plans Section within Join Content */
     .join-pricing-section {
-      background-color: #f0f4f8;
+      background-color: #f5f7fa;
       padding: 60px 20px;
       text-align: center;
       animation: fadeInUp 0.5s ease;
@@ -322,9 +312,9 @@
     }
 
     .join-pricing-card {
-      background: linear-gradient(135deg, #ffffff, #f9fafb);
+      background-color: #ffffff;
       border-radius: 20px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
       width: 320px;
       padding: 25px;
       text-align: center;
@@ -332,20 +322,6 @@
       flex-direction: column;
       justify-content: space-between;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-    }
-
-    .join-pricing-card.popular::before {
-      content: "Popular";
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      background-color: #ff7f50;
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 0.8rem;
-      font-weight: 600;
     }
 
     .join-pricing-card:hover {
@@ -354,7 +330,7 @@
     }
 
     .join-pricing-card .header {
-      background-color: #ff7f50;
+      background-color: #ef4444;
       color: #ffffff;
       font-weight: 700;
       padding: 12px;
@@ -372,7 +348,7 @@
     }
 
     .join-pricing-card .price strong {
-      color: #ff7f50;
+      color: #ef4444;
     }
 
     .join-pricing-card .details {
@@ -382,7 +358,7 @@
     }
 
     .join-pricing-card .details span {
-      color: #ff7f50;
+      color: #ef4444;
       font-weight: 600;
     }
 
@@ -396,10 +372,10 @@
       text-align: left;
       margin: 20px 0;
       padding: 0 15px;
-      list-style: none;
     }
 
     .join-pricing-card .features li {
+      list-style: none;
       margin: 10px 0;
       font-size: 0.95rem;
       display: flex;
@@ -412,17 +388,17 @@
       color: #1d4ed8;
     }
 
-    .join-pricing-card .features li::before {
+    .join-pricing-card .features li:before {
       content: "\f00c";
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       margin-right: 10px;
-      color: #28a745;
+      color: #10b981;
       font-size: 1rem;
     }
 
     .join-pricing-card .order-btn {
-      background-color: #007bff;
+      background-color: #10b981;
       color: white;
       padding: 12px 20px;
       border: none;
@@ -436,13 +412,8 @@
     }
 
     .join-pricing-card .order-btn:hover {
-      background-color: #0056b3;
+      background-color: #059669;
       transform: scale(1.05);
-    }
-
-    /* Pricing Card Highlight for Popular Plan */
-    .join-pricing-card.popular {
-      border: 2px solid #ff7f50;
     }
 
     /* Showcase Section */
@@ -472,7 +443,7 @@
     }
 
     .showcase-card {
-      background-color: #f0f4f8;
+      background-color: #f5f7fa;
       border-radius: 15px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       width: 300px;
@@ -511,7 +482,7 @@
     }
 
     .showcase-card .view-btn {
-      background-color: #28a745;
+      background-color: #2563eb;
       color: #ffffff;
       padding: 10px 20px;
       border: none;
@@ -524,14 +495,14 @@
     }
 
     .showcase-card .view-btn:hover {
-      background-color: #218838;
+      background-color: #1d4ed8;
       transform: scale(1.05);
     }
 
     /* Button Below Showcase Section */
     .showcase-section .action-btn {
       margin-top: 40px;
-      background: linear-gradient(90deg, #28a745, #218838);
+      background-color: #10b981;
       color: #ffffff;
       padding: 15px 30px;
       border: none;
@@ -544,14 +515,14 @@
     }
 
     .showcase-section .action-btn:hover {
-      background: linear-gradient(90deg, #218838, #1e7e34);
+      background-color: #059669;
       transform: scale(1.05);
     }
 
     /* Subscription Form Section */
     .subscription-form-section {
       padding: 40px 20px;
-      background-color: #f0f4f8;
+      background-color: #f5f7fa;
       border-top: 2px solid #e5e7eb;
       animation: fadeInUp 0.5s ease;
     }
@@ -587,8 +558,8 @@
 
     .subscription-form-section .form-control:focus,
     .subscription-form-section .form-select:focus {
-      border-color: #28a745;
-      box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.3);
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
       outline: none;
     }
 
@@ -601,7 +572,7 @@
     }
 
     .subscription-form-section .submit-btn {
-      background-color: #007bff;
+      background-color: #10b981;
       color: #ffffff;
       padding: 12px 25px;
       border: none;
@@ -614,7 +585,7 @@
     }
 
     .subscription-form-section .submit-btn:hover {
-      background-color: #0056b3;
+      background-color: #059669;
       transform: scale(1.02);
     }
 
@@ -701,7 +672,7 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #007bff;
+      background-color: #2563eb;
       color: #ffffff;
       border: none;
       border-radius: 50%;
@@ -717,7 +688,7 @@
     }
 
     .chat-button:hover {
-      background-color: #0056b3;
+      background-color: #1d4ed8;
       transform: scale(1.1);
     }
 
@@ -737,7 +708,7 @@
     }
 
     .chat-header {
-      background-color: #007bff;
+      background-color: #2563eb;
       color: #ffffff;
       padding: 10px 15px;
       border-top-left-radius: 10px;
@@ -764,7 +735,7 @@
     }
 
     .chat-body button {
-      background-color: #28a745;
+      background-color: #10b981;
       color: #ffffff;
       border: none;
       padding: 10px;
@@ -775,35 +746,8 @@
     }
 
     .chat-body button:hover {
-      background-color: #218838;
+      background-color: #059669;
       transform: scale(1.05);
-    }
-
-    /* Popup Modal Custom Styles */
-    .modal-header {
-      background-color: #ff7f50;
-      color: #f1f5f9;
-    }
-
-    .modal-body {
-      text-align: center;
-      font-size: 1.2rem;
-      color: #333;
-    }
-
-    .modal-footer {
-      justify-content: center;
-    }
-
-    /* Confetti Canvas */
-    #confetti-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1050; /* Above other elements */
     }
   </style>
 </head>
@@ -812,7 +756,7 @@
   <header class="header">
     <div class="logo">VIP MEMBERSHIP | MRI</div>
     <div class="nav-buttons">
-      <button id="toggleBtn" class="btn btn-primary">Join</button>
+      <button id="toggleBtn">Join</button>
     </div>
   </header>
 
@@ -863,15 +807,15 @@
         <h2>Our VIP Pricing Plans</h2>
         <div class="join-pricing-container">
           <!-- Pricing Card 6 MONTHS -->
-          <div class="join-pricing-card popular">
-            <div class="header">6 MONTHS</div>
+          <div class="join-pricing-card">
+            <div>6 MONTHS</div>
             <div class="price">USD <strong>99</strong></div>
             <div class="details">
               <span>One-time payment for 6 months access</span>
             </div>
             <hr>
             <ul class="features">
-              <li>No limit on downloads</li>
+              <li>**No limit** on downloads</li>
               <li>Access to all Google Sheets & Scripts</li>
               <li>Early access to brand-new code</li>
               <li>Priority support</li>
@@ -883,7 +827,7 @@
           
           <!-- Pricing Card 3 MONTHS -->
           <div class="join-pricing-card">
-            <div class="header">3 MONTHS</div>
+            <div>3 MONTHS</div>
             <div class="price">USD <strong>49</strong></div>
             <div class="details">
               <span>One-time payment for 3 months access</span>
@@ -901,7 +845,7 @@
 
           <!-- Pricing Card 1 MONTH -->
           <div class="join-pricing-card">
-            <div class="header">1 MONTH</div>
+            <div>1 MONTH</div>
             <div class="price">USD <strong>19</strong></div>
             <div class="details">
               <span>One-time payment for 1 month access</span>
@@ -1043,25 +987,6 @@
       <i class="fas fa-comments"></i>
     </div>
 
-    <!-- Confetti Canvas -->
-    <canvas id="confetti-canvas"></canvas>
-
-    <!-- Popup Modal -->
-    <div class="modal fade" id="offerModal" tabindex="-1" aria-labelledby="offerModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="offerModalLabel">Great Offer!</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>Enjoy our special offer: <strong>USD 19 for 1 Month</strong>. Limited Time Available!</p>
-            <button type="button" class="btn btn-success" id="modalJoinNow">Avail Now</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- JavaScript -->
     <script>
       // Get elements
@@ -1087,13 +1012,6 @@
       const sendChat = document.getElementById('sendChat');
       const chatMessage = document.getElementById('chatMessage');
 
-      // Popup Modal Elements
-      const offerModal = new bootstrap.Modal(document.getElementById('offerModal'));
-      const modalJoinNow = document.getElementById('modalJoinNow');
-
-      // Confetti Elements
-      const confettiCanvas = document.getElementById('confetti-canvas');
-
       // Function to show Join content and hide iframe
       function showJoinContent() {
         mainIframe.style.opacity = '0';
@@ -1103,10 +1021,6 @@
           toggleBtn.textContent = 'Login';
           joinSection.style.opacity = '1';
         }, 500); // Match with CSS transition duration
-
-        // Trigger Confetti and Popup Modal
-        triggerConfetti();
-        offerModal.show();
       }
 
       // Function to show iframe and hide Join content
@@ -1185,10 +1099,10 @@
             price = 'USD 99';
             break;
           case '3 MONTHS':
-            price = 'USD 49';
+            price = 'USD 30';
             break;
           case '1 MONTH':
-            price = 'USD 19';
+            price = 'USD 10';
             break;
           default:
             price = 'USD 0';
@@ -1250,56 +1164,7 @@
         chatMessage.value = '';
         chatBox.style.display = 'none';
       });
-
-      // Function to trigger Confetti
-      function triggerConfetti() {
-        const duration = 5 * 1000; // 5 seconds
-        const animationEnd = Date.now() + duration;
-        const defaults = { 
-          origin: { y: 0.7 },
-          colors: ['#ffc700', '#ff0000', '#2ecc71', '#3498db', '#9b59b6'],
-          shapes: ['circle', 'square'],
-          scalar: 1.2
-        };
-
-        function randomInRange(min, max) {
-          return Math.random() * (max - min) + min;
-        }
-
-        const myConfetti = confetti.create(confettiCanvas, {
-          resize: true,
-          useWorker: true
-        });
-
-        (function frame() {
-          myConfetti({
-            ...defaults,
-            particleCount: 3,
-            angle: randomInRange(55, 125),
-            spread: randomInRange(50, 70),
-            origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
-          });
-          myConfetti({
-            ...defaults,
-            particleCount: 3,
-            angle: randomInRange(55, 125),
-            spread: randomInRange(50, 70),
-            origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
-          });
-
-          if (Date.now() < animationEnd) {
-            requestAnimationFrame(frame);
-          }
-        })();
-      }
-
-      // Popup Modal "Avail Now" button
-      modalJoinNow.addEventListener('click', () => {
-        // Scroll to the subscription form with the 1 MONTH plan
-        showSubscriptionForm('1 MONTH', 'USD 19');
-        offerModal.hide();
-      });
     </script>
   </div>
 </body>
-</html>
+</html> 
