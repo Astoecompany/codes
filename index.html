@@ -13,6 +13,16 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
   <style>
+    /* ----------------------------------------------
+       COLOR PALETTE (Trust & Brand Strength)
+       ----------------------------------------------
+       - Dark Navy (primary background/button hovers): #0a2239
+       - Accent Yellow: #f0a500
+       - Accent Yellow Hover: #cc8600
+       - Background Light: #f5f7fa
+       - Standard Text: #333
+    */
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -23,7 +33,7 @@
       height: 100%;
       overflow: hidden; /* So the page doesn't scroll behind the container */
       font-family: 'Roboto', sans-serif;
-      background-color: #f5f7fa;
+      background-color: #f5f7fa; /* Light background */
       color: #333;
     }
 
@@ -34,8 +44,8 @@
 
     /* Header */
     .header {
-      background-color: #1e293b;
-      color: #f1f5f9;
+      background-color: #0a2239; /* Dark navy */
+      color: #fff;
       padding: 15px 30px;
       position: fixed;
       top: 0;
@@ -54,18 +64,19 @@
       font-family: 'Poppins', sans-serif;
     }
     .header .nav-buttons button {
+      /* Yellow background for the Login/Join button */
       margin-left: 10px;
       padding: 10px 20px;
       border: none;
-      background-color: #2563eb;
-      color: #f1f5f9;
+      background-color: #f0a500; /* Accent Yellow */
+      color: #0a2239; /* Dark Navy text for contrast */
       cursor: pointer;
       border-radius: 25px;
       transition: background-color 0.3s, transform 0.3s;
       font-size: 16px;
     }
     .header .nav-buttons button:hover {
-      background-color: #1d4ed8;
+      background-color: #cc8600; /* Darkened Yellow */
       transform: translateY(-2px);
     }
 
@@ -107,8 +118,8 @@
 
     /* Header within Join Content */
     .join-header {
-      background-color: #1e293b;
-      color: #f1f5f9;
+      background-color: #0a2239; /* Dark navy */
+      color: #fff;
       padding: 20px 30px;
       position: relative;
       text-align: center;
@@ -129,8 +140,8 @@
       right: 30px;
       top: 50%;
       transform: translateY(-50%);
-      background-color: #ef4444;
-      color: #f1f5f9;
+      background-color: #f0a500; /* Accent Yellow */
+      color: #fff;
       padding: 10px 30px;
       border: none;
       border-radius: 25px;
@@ -141,7 +152,7 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
     .join-header .save-now:hover {
-      background-color: #dc2626;
+      background-color: #cc8600; /* Darkened Yellow */
       transform: translateY(-50%) scale(1.05);
     }
 
@@ -166,8 +177,8 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .join-left-section {
-      background-color: #1e293b;
-      color: #f1f5f9;
+      background-color: #0a2239; /* Dark navy */
+      color: #fff;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -189,6 +200,7 @@
     }
     .join-right-section {
       background-color: #ffffff;
+      color: #333;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -199,7 +211,7 @@
       box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     }
     .join-sale-badge {
-      background-color: #ef4444;
+      background-color: #f0a500; /* Accent Yellow */
       color: #ffffff;
       padding: 5px 15px;
       border-radius: 20px;
@@ -210,16 +222,16 @@
       cursor: default;
     }
     .join-sale-badge:hover {
-      background-color: #dc2626;
+      background-color: #cc8600; /* Darkened Yellow */
     }
     .join-price {
       font-size: 2.5rem;
       margin: 15px 0;
-      color: #1e293b;
+      color: #333;
       font-weight: 700;
     }
     .join-price strong {
-      color: #ef4444;
+      color: #f0a500; /* highlight accent */
     }
     .join-features {
       list-style: none;
@@ -234,17 +246,17 @@
       transition: color 0.3s ease;
     }
     .join-features li:hover {
-      color: #1d4ed8;
+      color: #0a2239; /* dark navy */
     }
     .join-features li i {
-      color: #ef4444;
+      color: #f0a500; /* accent for icons */
       margin-right: 10px;
       min-width: 25px;
       text-align: center;
       font-size: 1.2rem;
     }
     .join-right-section .save-now {
-      background-color: #10b981;
+      background-color: #0a2239; /* Dark navy */
       color: #ffffff;
       padding: 15px 30px;
       border: none;
@@ -258,7 +270,7 @@
       font-size: 1rem;
     }
     .join-right-section .save-now:hover {
-      background-color: #059669;
+      background-color: #092034; 
       transform: scale(1.05);
     }
 
@@ -274,7 +286,7 @@
       font-family: 'Poppins', sans-serif;
       font-size: 2.8rem;
       margin-bottom: 40px;
-      color: #1e293b;
+      color: #333;
       animation: fadeInDown 0.5s ease;
     }
     .join-pricing-container {
@@ -288,16 +300,15 @@
       flex-wrap: wrap;
       gap: 1.5rem;
       justify-content: center;
-      align-items: stretch; /* ensures equal height in each row */
+      align-items: stretch;
     }
     .plan-col {
       flex: 1 1 250px; /* min col width */
       max-width: 300px; /* optional max width */
-      display: flex;    /* so the child can stretch */
+      display: flex;    
     }
 
     .join-pricing-card {
-      /* unify the visual style for each plan card */
       background: #fff;
       border-radius: 20px;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -307,7 +318,9 @@
       flex-direction: column;
       justify-content: space-between;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      width: 100%;        /* ensure it takes the full col width */
+      width: 100%;
+      position: relative;
+      color: #333;
     }
     .join-pricing-card:hover {
       transform: translateY(-5px);
@@ -317,7 +330,7 @@
       position: absolute;
       top: 0;
       right: 0;
-      background-color: #10b981;
+      background-color: #f0a500; /* Accent Yellow */
       color: #ffffff;
       font-size: 0.8rem;
       padding: 5px 10px;
@@ -329,19 +342,19 @@
       font-weight: 700;
       margin-bottom: 10px;
       text-transform: uppercase;
-      color: #ef4444;
+      color: #0a2239; /* dark navy */
     }
     .join-pricing-card .price {
       font-size: 2rem;
       font-weight: 700;
       margin: 20px 0;
-      color: #1e293b;
+      color: #333;
     }
     .join-pricing-card .price small {
-      font-size: 0.8rem; /* Smaller font for the 2.5% tax note */
+      font-size: 0.8rem;
     }
     .join-pricing-card .price strong {
-      color: #ef4444;
+      color: #f0a500; /* accent highlight */
     }
     .join-pricing-card .details {
       color: #4b5563;
@@ -349,7 +362,7 @@
       font-size: 1rem;
     }
     .join-pricing-card .details span {
-      color: #ef4444;
+      color: #f0a500;
       font-weight: 600;
     }
     .join-pricing-card hr {
@@ -372,19 +385,19 @@
       transition: color 0.3s ease;
     }
     .join-pricing-card .features li:hover {
-      color: #1d4ed8;
+      color: #0a2239;
     }
     .join-pricing-card .features li:before {
       content: "\f00c";
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       margin-right: 10px;
-      color: #10b981;
+      color: #f0a500; /* accent check */
       font-size: 1rem;
     }
     .join-pricing-card .order-btn {
-      background-color: #2563eb;
-      color: white;
+      background-color: #0a2239; /* dark navy */
+      color: #fff;
       padding: 12px 20px;
       border: none;
       border-radius: 25px;
@@ -396,7 +409,7 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .join-pricing-card .order-btn:hover {
-      background-color: #1d4ed8;
+      background-color: #092034;
       transform: scale(1.05);
     }
 
@@ -411,7 +424,7 @@
       font-family: 'Poppins', sans-serif;
       font-size: 2.5rem;
       margin-bottom: 30px;
-      color: #1e293b;
+      color: #333;
       text-align: center;
     }
     .subscription-form-section form {
@@ -420,7 +433,7 @@
     }
     .subscription-form-section .form-label {
       font-weight: 600;
-      color: #1e293b;
+      color: #333;
     }
     .subscription-form-section .form-control,
     .subscription-form-section .form-select {
@@ -430,23 +443,23 @@
       font-size: 1rem;
       margin-bottom: 20px;
       background-color: #ffffff;
-      color: #1e293b;
+      color: #333;
     }
     .subscription-form-section .form-control:focus,
     .subscription-form-section .form-select:focus {
-      border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+      border-color: #0a2239; /* dark navy focus ring */
+      box-shadow: 0 0 0 3px rgba(10,34,57,0.3);
       outline: none;
     }
     .subscription-form-section .price-display {
       font-size: 1.2rem;
       font-weight: 600;
-      color: #1e293b;
+      color: #333;
       margin-bottom: 20px;
       text-align: center;
     }
     .subscription-form-section .submit-btn {
-      background-color: #10b981;
+      background-color: #0a2239; /* dark navy */
       color: #ffffff;
       padding: 12px 25px;
       border: none;
@@ -458,7 +471,7 @@
       width: 100%;
     }
     .subscription-form-section .submit-btn:hover {
-      background-color: #059669;
+      background-color: #092034;
       transform: scale(1.02);
     }
 
@@ -469,12 +482,15 @@
       margin-top: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .payment-policy-section h3 {
       font-family: 'Poppins', sans-serif;
       font-size: 1.8rem;
       margin-bottom: 20px;
-      color: #1e293b;
+      color: #333;
       text-align: center;
     }
     .payment-policy-section ul {
@@ -488,22 +504,24 @@
       font-size: 1rem;
       position: relative;
       padding-left: 25px;
+      line-height: 1.5;
     }
     .payment-policy-section li::before {
       content: "\f00c";
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
-      color: #ef4444;
+      color: #f0a500; /* accent bullet */
       margin-right: 8px;
       position: absolute;
       left: 0;
       top: 0;
     }
     .important-note {
-      color: #dc2626;
+      color: #f0a500;
       font-weight: 600;
       margin-top: 10px;
       text-align: center;
+      line-height: 1.5;
     }
 
     /* Animations */
@@ -560,7 +578,7 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #2563eb;
+      background-color: #0a2239; /* dark navy */
       color: #ffffff;
       border: none;
       border-radius: 50%;
@@ -575,7 +593,7 @@
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
     .chat-button:hover {
-      background-color: #1d4ed8;
+      background-color: #092034;
       transform: scale(1.1);
     }
     .chat-box {
@@ -593,7 +611,7 @@
       z-index: 1001;
     }
     .chat-header {
-      background-color: #2563eb;
+      background-color: #0a2239;
       color: #ffffff;
       padding: 10px 15px;
       border-top-left-radius: 10px;
@@ -617,7 +635,7 @@
       margin-bottom: 10px;
     }
     .chat-body button {
-      background-color: #10b981;
+      background-color: #0a2239;
       color: #ffffff;
       border: none;
       padding: 10px;
@@ -627,7 +645,7 @@
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
     .chat-body button:hover {
-      background-color: #059669;
+      background-color: #092034;
       transform: scale(1.05);
     }
   </style>
@@ -637,6 +655,7 @@
   <header class="header">
     <div class="logo">VIP MEMBERSHIP | MRI</div>
     <div class="nav-buttons">
+      <!-- Login/Join button in yellow -->
       <button id="toggleBtn">Join</button>
     </div>
   </header>
@@ -688,11 +707,11 @@
       <section class="join-pricing-section" id="pricing">
         <h2>Our VIP Pricing Plans</h2>
         <div class="join-pricing-container">
-          <!-- Row 1: 4 plans -->
+          <!-- Only 4 Plans Now in a Single Row -->
           <div class="plan-row">
             <!-- WEEKLY -->
             <div class="plan-col">
-              <div class="join-pricing-card position-relative">
+              <div class="join-pricing-card">
                 <h4 class="plan-title">WEEKLY (7 Days)</h4>
                 <div class="price">USD <strong>4.99</strong> <small>(+2.5% Tax)</small></div>
                 <div class="details">
@@ -716,32 +735,6 @@
               </div>
             </div>
             
-            <!-- BI-WEEKLY -->
-            <div class="plan-col">
-              <div class="join-pricing-card position-relative">
-                <h4 class="plan-title">BI-WEEKLY (14 Days)</h4>
-                <div class="price">USD <strong>9.99</strong> <small>(+2.5% Tax)</small></div>
-                <div class="details">
-                  <span>1 download/day</span>
-                </div>
-                <hr>
-                <ul class="features">
-                  <li>Daily Downloads: 1</li>
-                  <li>Major web apps (limited)</li>
-                  <li>Watch & Earn Points</li>
-                  <li>Login Portal Access</li>
-                  <li>Terms & Conditions apply</li>
-                </ul>
-                <button 
-                  class="order-btn subscribe-btn" 
-                  data-plan="BI-WEEKLY" 
-                  data-price="USD 9.99 + 2.5% Tax"
-                >
-                  Subscribe Now
-                </button>
-              </div>
-            </div>
-
             <!-- MONTHLY -->
             <div class="plan-col">
               <div class="join-pricing-card position-relative">
@@ -796,75 +789,18 @@
                 </button>
               </div>
             </div>
-          </div>
-          
-          <!-- Row 2: 4 plans -->
-          <div class="plan-row mt-4">
-            <!-- 3 MONTHS -->
-            <div class="plan-col">
-              <div class="join-pricing-card position-relative">
-                <h4 class="plan-title">3 MONTHS (90 Days)</h4>
-                <div class="price">USD <strong>49.99</strong> <small>(+2.5% Tax)</small></div>
-                <div class="details">
-                  Extended access for 3 months
-                </div>
-                <hr>
-                <ul class="features">
-                  <li>Daily Downloads: 4</li>
-                  <li>All major web apps unlocked</li>
-                  <li>Custom Project Suggestions</li>
-                  <li>Watch & Earn Points</li>
-                  <li>Login Portal Access</li>
-                  <li>Terms & Conditions apply</li>
-                </ul>
-                <button 
-                  class="order-btn subscribe-btn" 
-                  data-plan="3 MONTHS" 
-                  data-price="USD 49.99 + 2.5% Tax"
-                >
-                  Subscribe Now
-                </button>
-              </div>
-            </div>
 
-            <!-- 6 MONTHS -->
+            <!-- PREMIER PLAN (1 YEAR) -->
             <div class="plan-col">
               <div class="join-pricing-card position-relative">
-                <h4 class="plan-title">6 MONTHS (180 Days)</h4>
-                <div class="price">USD <strong>99.99</strong> <small>(+2.5% Tax)</small></div>
-                <div class="details">
-                  Extended access for 6 months
-                </div>
-                <hr>
-                <ul class="features">
-                  <li>Daily Downloads: 5</li>
-                  <li>All major web apps unlocked</li>
-                  <li>Custom Project Suggestions</li>
-                  <li>Watch & Earn Points</li>
-                  <li>Login Portal Access</li>
-                  <li>Terms & Conditions apply</li>
-                </ul>
-                <button 
-                  class="order-btn subscribe-btn" 
-                  data-plan="6 MONTHS" 
-                  data-price="USD 99.99 + 2.5% Tax"
-                >
-                  Subscribe Now
-                </button>
-              </div>
-            </div>
-
-            <!-- 1 YEAR -->
-            <div class="plan-col">
-              <div class="join-pricing-card position-relative">
-                <h4 class="plan-title">1 YEAR (365 Days)</h4>
+                <h4 class="plan-title">PREMIER PLAN (1 YEAR)</h4>
                 <div class="price">USD <strong>119.99</strong> <small>(+2.5% Tax)</small></div>
                 <div class="details">
-                  Best long-term deal
+                  50 downloads/day
                 </div>
                 <hr>
                 <ul class="features">
-                  <li>Daily Downloads: 6</li>
+                  <li>Daily Downloads: 50</li>
                   <li>All major web apps unlocked</li>
                   <li>Custom Project Suggestions</li>
                   <li>Watch & Earn Points</li>
@@ -873,35 +809,8 @@
                 </ul>
                 <button 
                   class="order-btn subscribe-btn" 
-                  data-plan="1 YEAR" 
+                  data-plan="PREMIER PLAN (1 YEAR)" 
                   data-price="USD 119.99 + 2.5% Tax"
-                >
-                  Subscribe Now
-                </button>
-              </div>
-            </div>
-
-            <!-- LIFETIME -->
-            <div class="plan-col">
-              <div class="join-pricing-card position-relative">
-                <h4 class="plan-title">LIFETIME (∞)</h4>
-                <div class="price">USD <strong>199.99</strong> <small>(+2.5% Tax)</small></div>
-                <div class="details">
-                  Truly unlimited
-                </div>
-                <hr>
-                <ul class="features">
-                  <li>Daily Downloads: No Restriction</li>
-                  <li>All major web apps unlocked</li>
-                  <li>Custom Project Suggestions</li>
-                  <li>Watch & Earn Points</li>
-                  <li>Login Portal Access</li>
-                  <li>Terms & Conditions apply</li>
-                </ul>
-                <button 
-                  class="order-btn subscribe-btn" 
-                  data-plan="LIFETIME" 
-                  data-price="USD 199.99 + 2.5% Tax"
                 >
                   Subscribe Now
                 </button>
@@ -935,13 +844,9 @@
               <select id="formPlan" class="form-select" required>
                 <option value="" disabled selected>Select a plan</option>
                 <option value="WEEKLY">Weekly (7 Days)</option>
-                <option value="BI-WEEKLY">Bi-Weekly (14 Days)</option>
                 <option value="MONTHLY">Monthly (30 Days)</option>
                 <option value="MONTHLY PRO">Monthly Pro (30 Days)</option>
-                <option value="3 MONTHS">3 Months (90 Days)</option>
-                <option value="6 MONTHS">6 Months (180 Days)</option>
-                <option value="1 YEAR">1 Year (365 Days)</option>
-                <option value="LIFETIME">Lifetime (∞)</option>
+                <option value="PREMIER PLAN (1 YEAR)">Premier Plan (1 Year)</option>
               </select>
             </div>
           </div>
@@ -989,14 +894,29 @@
       <section class="payment-policy-section">
         <h3>Payment Policy & Terms</h3>
         <ul>
-          <li>All listed prices are subject to 2.5% tax.</li>
-          <li>Non-Refundable Items: Downloadable software products after the download link has been accessed.</li>
-          <li>Services that have already been provided or initiated are not eligible for refunds.</li>
-          <li>Products damaged due to misuse, neglect, or improper handling are not eligible for refunds.</li>
-          <li>Once you successfully log in to the portal, no refund will be provided.</li>
+          <li>All listed prices are subject to a 2.5% tax and may vary based on regional guidelines.</li>
+          <li>
+            Downloadable software products and membership fees become non-refundable once your download links are accessed or you’ve successfully logged into your portal.
+          </li>
+          <li>Services that have already been provided, initiated, or consumed in any form are not eligible for refunds.</li>
+          <li>
+            The “Daily Downloads” quota is intended for personal use only. Attempting to exceed or abuse your limit may result in suspension without refund.
+          </li>
+          <li>
+            Content accessed through membership remains the intellectual property of MRI. Redistribution or resale of any material is strictly prohibited.
+          </li>
+          <li>
+            We reserve the right to modify, update, or discontinue any features of our services at any time without prior notice.
+          </li>
+          <li>
+            Payment disputes or chargebacks without valid cause may lead to immediate account termination and potential legal action.
+          </li>
+          <li>
+            No refunds will be provided once your subscription is activated and you have started using the membership benefits.
+          </li>
         </ul>
         <p class="important-note">
-          By subscribing, you acknowledge and agree to these terms.
+          By subscribing, you acknowledge and agree to abide by these Terms & Conditions.
         </p>
       </section>
     </div><!-- .join-section -->
@@ -1117,26 +1037,14 @@
           case 'WEEKLY':
             priceText = 'USD 4.99 + 2.5% Tax';
             break;
-          case 'BI-WEEKLY':
-            priceText = 'USD 9.99 + 2.5% Tax';
-            break;
           case 'MONTHLY':
             priceText = 'USD 19.99 + 2.5% Tax';
             break;
           case 'MONTHLY PRO':
             priceText = 'USD 29.99 + 2.5% Tax';
             break;
-          case '3 MONTHS':
-            priceText = 'USD 49.99 + 2.5% Tax';
-            break;
-          case '6 MONTHS':
-            priceText = 'USD 99.99 + 2.5% Tax';
-            break;
-          case '1 YEAR':
+          case 'PREMIER PLAN (1 YEAR)':
             priceText = 'USD 119.99 + 2.5% Tax';
-            break;
-          case 'LIFETIME':
-            priceText = 'USD 199.99 + 2.5% Tax';
             break;
           default:
             priceText = '';
@@ -1161,7 +1069,7 @@
           return;
         }
 
-        // Construct message
+        // Construct message for WhatsApp
         const message = `*Subscription Request*\n\n*Name:* ${name}\n*Email:* ${email}\n*WhatsApp:* ${whatsapp}\n*Plan:* ${plan}\n*Price:* ${priceText}\n*Payment Method:* ${paymentMethod}`;
         const encodedMessage = encodeURIComponent(message);
         const whatsappURL = `https://wa.me/923224083545?text=${encodedMessage}`;
